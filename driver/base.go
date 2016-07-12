@@ -15,6 +15,7 @@ type Driver interface {
 	Init(*domain.Config) error
 	Describe() (*domain.Description, error)
 	Scan(t *domain.Table) (*sqlx.Rows, error)
+	VendorSpecificCasing(row map[string]interface{})
 }
 
 type Base struct {
